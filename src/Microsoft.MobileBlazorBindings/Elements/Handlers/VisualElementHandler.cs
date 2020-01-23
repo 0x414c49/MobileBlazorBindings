@@ -3,6 +3,7 @@
 
 using Microsoft.MobileBlazorBindings.Core;
 using System;
+using Xamarin.Forms;
 using XF = Xamarin.Forms;
 
 namespace Microsoft.MobileBlazorBindings.Elements.Handlers
@@ -106,6 +107,9 @@ namespace Microsoft.MobileBlazorBindings.Elements.Handlers
                     break;
                 case nameof(XF.VisualElement.WidthRequest):
                     VisualElementControl.WidthRequest = AttributeHelper.StringToDouble((string)attributeValue);
+                    break;
+                case nameof(XF.VisualElement.FlowDirection):
+                    VisualElementControl.FlowDirection = AttributeHelper.StringToFlowDirection(attributeValue);
                     break;
                 case "onfocused":
                     Renderer.RegisterEvent(attributeEventHandlerId, () => FocusedEventHandlerId = 0);
